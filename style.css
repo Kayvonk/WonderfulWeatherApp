@@ -1,0 +1,16 @@
+.form {
+position: absolute;
+    margin: 0%;
+}
+
+.uvi, .forecast {
+color: white;
+    }
+
+.forecastDiv {
+border-radius:  15px;
+}
+
+#cities {
+    cursor: pointer;
+}

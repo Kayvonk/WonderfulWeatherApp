@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>5-Day Forecast</title>
+</head>
+
+<body>
+    <div class="container-fluid"></div>
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="formColumn">
+                <div id="formCol" class="form-group form mt-3 ml-3">
+                    <label class="h5">Search for a City: </label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="" id="searchResponse" aria-describedby="helpId"
+                            placeholder="">
+                        <div class="input-group-append">
+                            <div id="searchDiv"></div>
+                            <span id="current-search"></span>
+                        </div>
+                    </div>
+                    <ul id="cities" class="mt-1"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10 pl-5">
+            <div class="row weather"> </div>
+            <h1 id="city"></h1>
+            <div id="weather"></div>
+            <div id="uvi"></div>
+            <div id="forecastHeader" class="pt-3 h2"></div>
+            <div id="forecast" class="row forecast p-3">
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
