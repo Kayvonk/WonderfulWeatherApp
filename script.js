@@ -64,16 +64,12 @@ function createForecastAPIParameters(coord) {
     return "lat=" + coord.lat + "&lon=" + coord.lon + "&exclude=current,minutely,hourly,alerts&appid=" + APIKey;
 }
 
-searchBtn.addEventListener("click", getCity)
+searchBtn.addEventListener("click", () => getCity(searchHistory[0]))
 
 function getCity(cityInput) {
-    if (!cityInput) {
-        cityInput = searchHistory[0];
-    }
     $.ajax({
         url: currentWeatherURL + createCurrentWeatherAPIParameters(cityInput),
         method: "GET"
-
     })
         .then(function (response) {
             $("#city").empty()
@@ -86,12 +82,10 @@ function getCity(cityInput) {
             $("#city").append(response.name + " (" + (now.format("l")) + ")");
             $("#weather").html("<br />" + "Temperature: " + temp.toFixed(1) + "&#8457;" + "<br /><br />" + "Humidity: " + response.main.humidity + "%" + "<br /><br />" + "Windspeed: " + response.wind.speed + "mph" + "<br /><br />");
 
-
             return $.ajax({
                 url: forecastURL + createForecastAPIParameters(response.coord),
                 method: "GET"
             })
-
         })
 
         .then(function (response) {
@@ -103,7 +97,6 @@ function getCity(cityInput) {
             uviBtn.append(uvi)
             $("#uvi").append("UV Index: ")
             $("#uvi").append(uviBtn);
-
 
             var forecast = document.getElementById("forecast")
             var forecastHeader = document.getElementById("forecastHeader")
@@ -137,12 +130,11 @@ function getCity(cityInput) {
 
                     forecastDiv.append(date, icon, dailyStats)
                     forecast.append(forecastDiv);
-
                 }
                 createForecastDiv(a)
             }
             console.log(response);
         });
 }
-getCity()
+getCity(searchHistory[0])
 

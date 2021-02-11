@@ -13,4 +13,6 @@ border-radius:  15px;
 
 #cities {
     cursor: pointer;
-}
+    margin-top: 10%;
+    line-height: 300%;
+    }
