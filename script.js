@@ -50,7 +50,7 @@ searchBtn.addEventListener("click", function () {
     else {
         searchHistory = searchHistory.filter(elem => city !== elem)
         searchHistory.unshift(city);
-        searchHistory.splice(3);
+        searchHistory.splice(8);
         localStorage.setItem("cities", JSON.stringify(searchHistory));
         renderSearchHistory()
     }
